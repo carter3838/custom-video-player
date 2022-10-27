@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css"
-        integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0ef7a854d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/progress.css">
     <link rel="stylesheet" href="CSS/style.css">
     <title>Custom video player</title>
@@ -16,9 +14,18 @@
 <body>
     <h1>Custom video player</h1>
     <video class="screen" poster="images\poster.png" id="video" src="videos\gone.mp4"></video>
+
     <div class="controls">
-       <button class="btn" id="play"></button>
-       <button class="btn" id="stop"></button> 
+       <button class="btn" id="play">
+        <i class="fa fa-play fa-2x"></i>
+    </button>
+       
+       <button class="btn" id="stop">
+        <i class="fa fa-stop fa-2x"></i>
+       </button> 
+
+       <input type="range" name="" id="progress" class="progress" min="0" max="100" step="0.1" value="0">
+
     </div>
 
     <script src="script.js"></script>
