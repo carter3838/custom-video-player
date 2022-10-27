@@ -29,7 +29,8 @@ function updateProgress() {
 
 //stop video
 function stopVideo() {
-
+    video.currentTime = 0;
+    video.pause()
 }
 
 //set video time to progress
