@@ -6,7 +6,7 @@ let timestamp = document.getElementById('timestamp')
 
 //play and pause video
 function toggleVideoStatus() {
-    if(video.paused) {
+    if (video.paused) {
         video.play()
     } else {
         video.pause()
@@ -24,7 +24,18 @@ function updatePlayIcon() {
 
 //update progress and timestamp
 function updateProgress() {
+    progress.value = (video.currentTime / video.duration) * 100;
 
+    let minutes = Math.floor(video.currentTime / 60);
+    if (minutes < 10) {
+        minutes = '0' + String(minutes);
+    }
+
+    let seconds = Math.floor(video.currentTime % 60)
+    if (seconds < 10) {
+        seconds = '0' + String(seconds);
+    }
+    timestamp.innerText = `${minutes}:${seconds}`
 }
 
 //stop video
@@ -35,7 +46,7 @@ function stopVideo() {
 
 //set video time to progress
 function setVideoProgress() {
-
+    video.currentTime = +(progress.value * video.duration) / 100
 }
 
 // eventlisteners
